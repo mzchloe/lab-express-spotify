@@ -23,6 +23,18 @@ const spotifyApi = new SpotifyWebApi({
     .clientCredentialsGrant()
     .then(data => spotifyApi.setAccessToken(data.body['access_token']))
     .catch(error => console.log('Something went wrong when retrieving an access token', error));
-// Our routes go here:
+
+    // Our routes go here:
+
+    //create homepage
+    app.get('/', (req, res) => {
+        res.render('home')
+    })
+
+    //query to artist search
+    app.get('/artist-search', (req, res) => {
+      res.render('')
+    })
+
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
