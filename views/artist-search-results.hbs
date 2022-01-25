@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row"></div>
+    {{#each artistsList}}
+    <div class="artists-info">
+        <div><img src=""></div>
+        <div>
+            <p>
+                {{this.name}} {{!-- refers to the artist name in the spotifyAPI --}}
+            </p>
+            <a href="/albums/{{this.id}}">View Albums</a>
+        </div>
+    </div>
+</div>
