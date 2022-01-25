@@ -1,5 +1,6 @@
 <div class="container">
     <div class="row"></div>
+    <h1>Albums for: {{this.name}}</h1> {{!-- showing the artist result name --}}
     {{#each artistsList}} {{!-- defined in the app.js file --}}
     <div class="artists-info">
         <div><img src=""></div>
@@ -7,8 +8,9 @@
             <p>
                 {{this.name}} {{!-- refers to the artist name in the spotifyAPI --}}
             </p>
+            {{/each}}
         {{!--     iteration 4 - see albums of particular artist: --}}
-            <a href="/albums/{{this.id}}">View Albums</a> {{!-- takes the id from the album folder on spotifyAPI --}}
+            <a href="/tracks/{{this.id}}">View Tracks</a> {{!-- takes the id from the album folder on spotifyAPI --}}
         </div>
     </div>
 </div>
