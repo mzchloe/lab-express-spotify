@@ -8,9 +8,13 @@ const SpotifyWebApi = require("spotify-web-api-node");
 
 const app = express();
 
+//set view template engine
 app.set("view engine", "hbs");
 app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
+
+//tell express about the body-parser
+app.use(express.urlencoded({ extended: true }))
 
 // setting the spotify-api goes here:
 const spotifyApi = new SpotifyWebApi({
@@ -51,7 +55,7 @@ app.get("/artist-search", (req, res) => {
 });
 
 // Get albums by a certain artist
-app.get("/albums/:artistId", (req, res, next) => {
+/* app.get("/albums/:artistId", (req, res, next) => {
   const artistAlbums = req.params.artistId;
   // .getArtistAlbums() code goes here
   spotifyApi
@@ -64,7 +68,7 @@ app.get("/albums/:artistId", (req, res, next) => {
       console.error(err);
     }
   );
-});
+}); */
 
 app.listen(3000, () =>
   console.log("My Spotify project running on port 3000 🎧 🥁 🎸 🔊")

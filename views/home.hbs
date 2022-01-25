@@ -4,7 +4,8 @@
         <form class="searchForm" action="/artist-search" method="get">
         <label for="searchbar"></label>
         <input class="search" id="searchbar" type="text" name="searchInput" >
-        <button class="searchBtn" type="submit">Search for an Artist</button>
+        <button class="searchBtn" type="submit">
+            <a href="/albums/{{this.id}}">Search for an Artist</a></button>
         </form>
     </div>
 </div>
