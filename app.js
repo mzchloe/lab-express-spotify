@@ -44,7 +44,7 @@ app.get("/artist-search", (req, res) => {
   spotifyApi
     .searchArtists(artistName) //--> query the artist
     .then((artistName) => {
-      const artistList = artistName.body.artists.items; //get the data from the API on artist and what info they have
+      let artistList = artistName.body.artists.items; //get the data from the API on artist and what info they have
       //console.log('The received data from the API: ', data.body);
       // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
       res.render("artist-search-results", { artistList }); //artistList is in the artist-search-results.hbs file, where we display the results
