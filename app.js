@@ -33,14 +33,15 @@ const spotifyApi = new SpotifyWebApi({
 
     //query to artist search
     app.get('/artist-search', (req, res) => {
-      const artistName = req.query.artists;
+      const artistName = req.query.artists; //--> get the artist from the spotifyAPI
 
       spotifyApi
-      .searchArtists(artistName)
+      .searchArtists(artistName) //--> query the artist
       .then((artistName) => {
-        const artistList = artistName.body.artists.items;//console.log('The received data from the API: ', data.body);
+        const artistList = artistName.body.artists.items; //get the data from the API on artist and what info they have
+        //console.log('The received data from the API: ', data.body);
           // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
-          res.render('artist-search-results', {artistList});
+          res.render('artist-search-results', {artistList}); //artistList is in the artist-search-results.hbs file, where we display the results
       })
       .catch(err => console.log('The error while searching artists occurred: ', err));
        

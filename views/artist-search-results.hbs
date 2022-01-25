@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row"></div>
-    {{#each artistsList}}
+    {{#each artistsList}} {{!-- defined in the app.js file --}}
     <div class="artists-info">
         <div><img src=""></div>
         <div>
             <p>
                 {{this.name}} {{!-- refers to the artist name in the spotifyAPI --}}
             </p>
-            <a href="/albums/{{this.id}}">View Albums</a>
+            <a href="/albums/{{this.id}}">View Albums</a> {{!-- takes the id from the album folder on spotifyAPI --}}
         </div>
     </div>
 </div>
