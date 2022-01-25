@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    background-color: tomato;
+    color: white;
+    border: none;
+    padding: 10px; 
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    min-width: 250px;
+    width: 250px;
+    height: 350px;
+  }

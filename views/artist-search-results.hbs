@@ -1,15 +1,23 @@
+<link rel='stylesheet' href='/styles/artistResult.css' />
 <div class="container">
-    <div class="row"></div>
-    {{#each artistsList}} {{!-- defined in the app.js file --}}
-    <div class="artists-info">
-        <div><img src=""></div>
+   {{!-- <div class="row"></div> --}}
+   <h1>Artist</h1>
+    
+    <div class="content">
+        {{#each artistList}} {{!-- defined in the app.js file --}}
+        <div class="results">
+        <div><img src={{this.images.2.url}}></div>
         <div>
             <p>
                 {{this.name}} {{!-- refers to the artist name in the spotifyAPI --}}
             </p>
         {{!--     iteration 4 - see albums of particular artist: --}}
+       
             <button><a href="/albums/{{this.id}}">View Albums</a>
             </button> {{!-- takes the id from the album folder on spotifyAPI --}}
         </div>
+         </div>
+         {{/each}} {{!-- the closing needs to be closed after the div  --}}
     </div>
-</div>
+  
+</div> 
